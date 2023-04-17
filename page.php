@@ -9,16 +9,26 @@
 <body>
     
 <?php 
-   
-   $paragrafo = $_POST['paragrafo'];
 
-   echo $paragrafo;
-   
+    $badWords = $_POST['parola'];
+
+    $paragraph = $_POST['paragrafo'];
+    
+    echo $paragraph;
+
+    $newParagraph = str_replace($badWords, '***',$paragraph);
 
 ?>
 
 <div>
-    La lunghezza del paragrafo é di: <?php echo strlen($paragrafo) ?> lettere
+    La lunghezza del paragrafo é di: <?php echo strlen($paragraph) ?> lettere
+</div>
+
+<div>
+    Paragrafo con parole censurate: <br> <?php echo $newParagraph; ?> <br>
+
+    La lunghezza del nuovo paragrafo è: <?php echo strlen($newParagraph);  ?>
+
 </div>
 </body>
 </html>
